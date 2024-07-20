@@ -24,8 +24,8 @@ wanted_person_class_id = 1
 cap = cv2.VideoCapture(0)  # 0 for the first connected camera
 
 def send_email(image_path, location, gps_coordinates):
-    from_email = 'devkkverma123@gmail.com'
-    to_email = 'devkkverma123@gmail.com'
+    from_email = 'example@gmail.com'
+    to_email = 'example@gmail.com'
     subject = 'Wanted Person Detected'
     body = f'A wanted person was detected at the following location:\n{location}\nGPS Coordinates: {gps_coordinates}'
     
@@ -46,7 +46,7 @@ def send_email(image_path, location, gps_coordinates):
     
     server = smtplib.SMTP('smtp.gmail.com', 587)
     server.starttls()
-    server.login(from_email, 'fpyg gfrz pqdo bdoo')  # Replace with your App Password
+    server.login(from_email, 'your_app_password')  # Replace with your App Password
     text = msg.as_string()
     server.sendmail(from_email, to_email, text)
     server.quit()
